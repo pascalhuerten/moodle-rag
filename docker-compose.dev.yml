@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  moodle-rag:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    restart: unless-stopped
+    volumes:
+      - "./data:/code/data"
+      - "./src:/code/src"
+    env_file:
+      - .env
+    ports:
+      - "${HOST_PORT}:7680"

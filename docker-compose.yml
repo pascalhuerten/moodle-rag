@@ -1,0 +1,15 @@
+version: '3.1' # specify docker-compose version
+
+services:
+  # Runs from the latest release
+  moodle-rag:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pascalhuerten/moodle-rag:latest
+    pull_policy: always
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "${HOST_PORT}:7680"

@@ -1,0 +1,7 @@
+.git
+.dockerignore
+.env
+.python-version
+venv/
+data/training/
+**/__pycache__/*
